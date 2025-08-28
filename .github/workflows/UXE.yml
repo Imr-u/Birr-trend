@@ -25,7 +25,7 @@ jobs:
 
       - name: Run scraper
         run: |
-          Project_UXB.py
+          python Project_UXB.py
 
       - name: Commit and push results
         run: |
