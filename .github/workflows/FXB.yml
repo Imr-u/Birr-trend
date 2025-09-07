@@ -34,6 +34,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add USDBIRR.csv
-          git commit -m "Update FXBIRR.csv [skip ci]" || echo "No changes to commit"
+          git add EURBIRR.csv
+          git commit -m "Update EURBIRR.csv [skip ci]" || echo "No changes to commit"
           git push
