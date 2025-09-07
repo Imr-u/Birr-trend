@@ -67,11 +67,11 @@ df_clean.to_csv("EURBIRR.csv", index=False)
 # In[17]:
 
 
-usd_entry = next(item for item in data["data"] if item["currency"]["code"] == "AED")
+usd_entry2 = next(item for item in data["data"] if item["currency"]["code"] == "AED")
 
-aed_buying = float(usd_entry["buying"])
-aed_selling = float(usd_entry["selling"])
-aed_weighted = float(usd_entry["weighted_average"])
+aed_buying = float(usd_entry2["buying"])
+aed_selling = float(usd_entry2["selling"])
+aed_weighted = float(usd_entry2["weighted_average"])
 scrape_time= datetime.date.today()
 
 rates_= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
