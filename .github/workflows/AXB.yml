@@ -1,4 +1,4 @@
-name: FX to ETB Scraper
+name: AX to ETB Scraper
 
 on:
   schedule:
