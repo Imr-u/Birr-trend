@@ -31,11 +31,6 @@ eur_selling = float(usd_entry["selling"])
 eur_weighted = float(usd_entry["weighted_average"])
 scrape_time = datetime.date.today()
 
-print( eur_buying)
-print( eur_selling)
-print( eur_weighted)
-print(scrape_time)
-
 rates= [[eur_buying, eur_selling, eur_weighted, scrape_time]]
 columns = ["buying", "selling", "avg", "scrape_time"]
 
@@ -44,7 +39,6 @@ columns = ["buying", "selling", "avg", "scrape_time"]
 
 
 df= pd.DataFrame(rates,columns= columns)
-print(df)
 
 df_new = pd.DataFrame(rates, columns = columns)
 
