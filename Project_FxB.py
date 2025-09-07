@@ -64,36 +64,7 @@ df_clean = df_combined.drop_duplicates(subset=["scrape_time"])
 df_clean.to_csv("EURBIRR.csv", index=False) 
 
 
-# In[17]:
 
 
-usd_entry2 = next(item for item in data["data"] if item["currency"]["code"] == "AED")
 
-aed_buying = float(usd_entry2["buying"])
-aed_selling = float(usd_entry2["selling"])
-aed_weighted = float(usd_entry2["weighted_average"])
-scrape_time= datetime.date.today()
-
-rates_= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
-columns_ = ["buying", "selling", "avg", "scrape_time"]
-
-df_= pd.DataFrame(rates_,columns= columns_)
-print(df_)
-
-df_new_ = pd.DataFrame(rates, columns = columns_)
-
-
-# In[22]:
-
-
-if os.path.exists("AEDBIRR.csv"):
-    df_old_ = pd.read_csv("AEDBIRR.csv")
-else:
-    df_old_= pd.DataFrame(columns=df_new.columns)
-
-df_combined_a = pd.concat([df_old_, df_new_], ignore_index=True)
-df_clean_a = df_combined_a.drop_duplicates(subset=["scrape_time"])
-
-
-df_clean_a.to_csv("AEDBIRR.csv", index=False) 
 
