@@ -75,6 +75,5 @@ df_clean.to_csv("EURBIRR.csv", index=False)
 
 
 
->>>>>>> 12340e61ff2f19a1b812dfb29d1c1041f5d867c3
 
 
