@@ -27,9 +27,9 @@ data = page.json()
 
 aed_entry = next(item for item in data["data"] if item["currency"]["code"] == "AED")
 
-aed_buying = float(usd_entry["buying"])
-aed_selling = float(usd_entry["selling"])
-aed_weighted = float(usd_entry["weighted_average"])
+aed_buying = float(aed_entry["buying"])
+aed_selling = float(aed_entry["selling"])
+aed_weighted = float(aed_entry["weighted_average"])
 scrape_time= datetime.date.today()
 
 rates_= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
