@@ -25,23 +25,11 @@ page = requests.get(url)
 data = page.json()
 
 
-aed_entry = next(item for item in data["data"] if item["currency"]["code"] == "AED")
+eur_entry = next(item for item in data["data"] if item["currency"]["code"] == "EUR")
 
-aed_buying = float(aed_entry["buying"])
-aed_selling = float(aed_entry["selling"])
-aed_weighted = float(aed_entry["weighted_average"])
-scrape_time= datetime.date.today()
-
-rates= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
-columns= ["buying", "selling", "avg", "scrape_time"]
-
-df= pd.DataFrame(rates,columns= columns)
-
-df_new = pd.DataFrame(rates, columns = columns)
-
-eur_buying = float(usd_entry["buying"])
-eur_selling = float(usd_entry["selling"])
-eur_weighted = float(usd_entry["weighted_average"])
+eur_buying = float(eur_entry["buying"])
+eur_selling = float(eur_entry["selling"])
+eur_weighted = float(eur_entry["weighted_average"])
 scrape_time = datetime.date.today()
 
 rates= [[eur_buying, eur_selling, eur_weighted, scrape_time]]
