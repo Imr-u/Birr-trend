@@ -25,7 +25,6 @@ page = requests.get(url)
 data = page.json()
 
 
-<<<<<<< HEAD
 aed_entry = next(item for item in data["data"] if item["currency"]["code"] == "AED")
 
 aed_buying = float(usd_entry["buying"])
@@ -40,7 +39,7 @@ df_= pd.DataFrame(rates_,columns= columns_)
 print(df_)
 
 df_new_ = pd.DataFrame(rates, columns = columns_)
-=======
+
 eur_buying = float(usd_entry["buying"])
 eur_selling = float(usd_entry["selling"])
 eur_weighted = float(usd_entry["weighted_average"])
