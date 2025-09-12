@@ -32,13 +32,12 @@ aed_selling = float(aed_entry["selling"])
 aed_weighted = float(aed_entry["weighted_average"])
 scrape_time= datetime.date.today()
 
-rates_= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
-columns_ = ["buying", "selling", "avg", "scrape_time"]
+rates= [[aed_buying, aed_selling, aed_weighted, scrape_time]]
+columns= ["buying", "selling", "avg", "scrape_time"]
 
-df_= pd.DataFrame(rates_,columns= columns_)
-print(df_)
+df= pd.DataFrame(rates,columns= columns)
 
-df_new_ = pd.DataFrame(rates, columns = columns_)
+df_new = pd.DataFrame(rates, columns = columns)
 
 eur_buying = float(usd_entry["buying"])
 eur_selling = float(usd_entry["selling"])
