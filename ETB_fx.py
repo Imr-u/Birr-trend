@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
-
-
 from bs4 import BeautifulSoup
 import requests
 import datetime
 import os
 import pandas as pd
-
-
-# In[25]:
 
 
 url = "https://api.nbe.gov.et/api/get-selected-exchange-rates"
@@ -41,7 +35,6 @@ if data.get("success") and "data" in data:
             "Pair": pair
         })
 df_new = pd.DataFrame(records)
-df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
 
 
 if os.path.exists(file_path):
@@ -54,9 +47,4 @@ else:
 df_combined.to_csv(file_path, index=False)
 
 
-
-# In[ ]:
-
-
-# Step 3: append to master CSV or create new one
 
