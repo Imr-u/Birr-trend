@@ -8,10 +8,10 @@ import os
 import pandas as pd
 
 
-url = "https://api.nbe.gov.et/api/get-selected-exchange-rates"
+url = "https://api.nbe.gov.et/api/filter-exchange-rates"
 
-
-page = requests.get(url)
+date_str = datetime.date.today().strftime("%Y-%m-%d")
+page = requests.get(url, params={"date": date_str})
 
 data = page.json()
 file_path = "ETB_fx.csv"
