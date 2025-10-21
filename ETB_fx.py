@@ -39,7 +39,7 @@ df_new = pd.DataFrame(records)
 
 if os.path.exists(file_path):
     old_df = pd.read_csv(file_path)
-    df_combined = pd.concat([old_df, df_new], ignore_index=True).drop_duplicates()
+    df_combined = pd.concat([old_df, df_new], ignore_index=True).drop_duplicates(subset=["scrape_time", "Pair"], keep="last")
 else:
     df_combined = df_new
 
