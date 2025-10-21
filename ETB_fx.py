@@ -32,7 +32,8 @@ if data.get("success") and "data" in data:
             "selling": selling,
             "avg": avg,
             "scrape_time": scrape_time,
-            "Pair": pair
+            "Pair": pair,
+            "date": date_str
         })
 df_new = pd.DataFrame(records)
 
